@@ -1,2 +1,5 @@
 # narmiTakehome
-Narmi interview takehome
+Narmi interview take home
+
+## Assignment
+Read in movies and produce schedule
