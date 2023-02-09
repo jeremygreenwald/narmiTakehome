@@ -1,4 +1,4 @@
-
+import datetime
 from csv import DictReader
 
 
@@ -19,5 +19,10 @@ def read_movie_file(input_file):
         dict_reader = DictReader(f)
         list_of_movies = list(dict_reader)
         print(list_of_movies)
-
+        for movie in list_of_movies:
+            movie[" Release Year"] = int(movie[" Release Year"])
+            movie[" MPAA Rating"] = movie[" MPAA Rating"].strip(" ")
+            runtime = movie[" Run Time"].strip(" ")
+            movie[" Run Time"] = datetime.time(hour=int(runtime.split(':')[0]),
+                                               minute=int(runtime.split(':')[1]))
     return list_of_movies
